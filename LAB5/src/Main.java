@@ -1,7 +1,16 @@
 public class Main {
     public static void main(String[] args) {
-        Complex z = new Complex(1, -5);
-        Complex z1 = new Complex(1, 5);
+        ChessTable chessTable = new ChessTable();
+        chessTable.showTable();
+
+        chessTable.doMove(0, 0, 2, 4);
+        chessTable.showTable();
+        chessTable.doMove(0, 1, 0, 2);
+        chessTable.showTable();
+
+
+//        Complex z = new Complex(1, -5);
+//        Complex z1 = new Complex(1, 5);
 
 //        System.out.println(z);
 //        System.out.println(z1);
