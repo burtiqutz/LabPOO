@@ -1,12 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-        ChessTable chessTable = new ChessTable();
-        chessTable.showTable();
-
-        chessTable.doMove(0, 0, 2, 4);
-        chessTable.showTable();
-        chessTable.doMove(0, 1, 0, 2);
-        chessTable.showTable();
+        Game game = new Game();
+        game.startGame();
+        //testing
+//        game.doTurn(1, 0, 2, 0);    //white; PAWN TEST
+//        game.doTurn(7, 1, 5, 0);    //black
+//        game.doTurn(1,4,2,4);
+//        game.doTurn(6, 7, 5, 7);
+//        game.doTurn(0, 5, 3, 2);
+//        game.doTurn(5, 7, 4, 7);
+//        game.doTurn(0, 4, 1, 4);
+//        game.doTurn(7, 7, 5, 7);
+//        game.doTurn(1, 4, 2, 5);
+//        game.doTurn(5, 7, 5, 4);
+//        game.doTurn(2, 5, 6, 5);
 
 
 //        Complex z = new Complex(1, -5);

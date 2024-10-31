@@ -44,10 +44,10 @@ public class ChessTable {
                             chessTable[i][j] = new Bishop("black", i, j);
                         }
                         if (j == 3) {
-                            chessTable[i][j] = new Queen("white", i, j);
+                            chessTable[i][j] = new Queen("black", i, j);
                         }
                         if (j == 4) {
-                            chessTable[i][j] = new King("white", i, j);
+                            chessTable[i][j] = new King("black", i, j);
                         }
                         break;
                     default:
@@ -61,6 +61,8 @@ public class ChessTable {
         Piece piece = chessTable[startX][startY];
         if(piece.isValidMove(this, endX, endY)){
             chessTable[endX][endY] = piece;
+            piece.setX(endX);
+            piece.setY(endY);
             chessTable[startX][startY] = null;
         }
     }
@@ -70,6 +72,7 @@ public class ChessTable {
     }
 //we should use FEN notation but i don't feel like doing that again
     public void showTable() {
+        System.out.println("0 1 2 3 4 5 6 7  ");
         for (int i = 0; i < 8; ++i) {
             for (int j = 0; j < 8; ++j) {
                 if(chessTable[i][j] != null) {
@@ -79,6 +82,7 @@ public class ChessTable {
                     System.out.print("  ");
                 }
             }
+            System.out.print(" " + i);
             System.out.println();
         }
         System.out.println();

@@ -6,13 +6,13 @@ public class Pawn extends Piece {
         super(color, x, y);
         super.setType('P');
     }
-
+    @Override
     public boolean isValidMove(ChessTable chessTable, int newX, int newY) {
-        //pawn can only move on y axis
-        if(newX != this.getX()){
+
+        if (newY != this.getY()) {
             return false;
         }
-        if(Math.abs(newY - this.getY()) > 1){ //can only move 1 block
+        if (Math.abs(newX - this.getX()) > 1) { //can only move 1 block
             return false;
         }
 
@@ -23,15 +23,18 @@ public class Pawn extends Piece {
         if (x < 0 || x > 7 || y < 0 || y > 7)
             return false;
 
-        if(chessTable.getPiece(x, y + 1) == null)
+        if (chessTable.getPiece(x + 1, y) == null)
             return true;
-        if(!chessTable.getPiece(x, y + 1).getColor().equals(this.getColor()))
+        if (!chessTable.getPiece(x + 1, y).getColor().equals(this.getColor()))
             return true;
         return true;
     }
 
     @Override
     public String toString() {
-        return "P";
+        if(this.getColor().equals("white")){
+            return "P";
+        } else
+            return "p";
     }
 }

@@ -6,7 +6,7 @@ public class Rook extends Piece {
         super(color, x, y);
         super.setType('R');
     }
-
+    @Override
     public boolean isValidMove(ChessTable chessTable, int newX, int newY) {
         if (newX < 0 || newX > 7 || newY < 0 || newY > 7)
             return false;
@@ -15,7 +15,7 @@ public class Rook extends Piece {
             // Check if path is clear
             if (isPathClear(newX, newY, chessTable)) {
                 Piece dest = chessTable.getPiece(newX, newY);
-                if(dest == null || !Objects.equals(chessTable.getPiece(newX, newY).getColor(), this.getColor())){
+                if (dest == null || !Objects.equals(dest.getColor(), this.getColor())) {
                     return true;
                 }
             }
@@ -43,6 +43,9 @@ public class Rook extends Piece {
     }
 
     public String toString() {
-        return "R";
+        if(this.getColor().equals("white")){
+            return "R";
+        } else
+            return "r";
     }
 }
