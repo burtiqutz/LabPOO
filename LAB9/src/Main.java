@@ -50,5 +50,13 @@ public class Main {
         } catch (ExceptieNoua e){
             System.out.println(e.getMessage());
         }
+
+        //  Tema 6.7
+        ClasaA obj = new ClasaC();
+        try {
+            obj.throwException();
+        } catch (BaseException e) {
+            System.out.println("Caught exception: " + e.getClass().getSimpleName());
+        }
     }
 }
